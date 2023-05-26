@@ -15,10 +15,15 @@ class LogIn(QMainWindow):
 		self.ui.pushButtonAccept.clicked.connect(self.button_clicked)
 
 	def button_clicked(self):
-		connection = Connection_Oracle()
+
 		user = self.ui.lineEditUser.text()
 		password = self.ui.lineEditPassword.text()
+		print(user)
+		print(password)
+		connection = Connection_Oracle()
 		connection.open(user, password)
+		# print("desconectando...")
+		# connection.close()
 
 
 app = QApplication(sys.argv)

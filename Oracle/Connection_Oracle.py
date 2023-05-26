@@ -7,18 +7,24 @@ class Connection_Oracle:
         self.password = None
         self.dsn = 'localhost:1521/XEPDB1'
         self.encoding = 'UTF-8'
-        self.connection = None
+
 
     def open(self, user, password):
         self.user = user
         self.password = password
+        # print(f"Usuario {self.user}, {self.password}")
 
         try:
-            self.connection = cx_Oracle.connect(self.user, self.password, self.dsn, self.encoding)
+            self.connection = cx_Oracle.connect(
+                user=self.user,
+                password=self.password,
+                dsn=self.dsn,
+                encoding=self.encoding)
+
             print('Successful Connection')
-        except cx_Oracle.DatabaseError as e:
-            error = e.args
-            print('Database connection error', error.message)
+        except Exception as ex:
+            error = ex
+            print('Database connection error', error)
     
     def close (self):
         if (self.connection): # Si hay conexion, desconectar y volver a colocar None
