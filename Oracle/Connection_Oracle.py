@@ -1,6 +1,7 @@
 import cx_Oracle
 
-class Connection_Oracle:
+
+class ConnectionOracle:
 
     def __init__(self):
         self.user = None
@@ -19,17 +20,17 @@ class Connection_Oracle:
         except cx_Oracle.DatabaseError as e:
             error = e.args
             print('Database connection error', error.message)
-    
-    def close (self):
-        if (self.connection): # Si hay conexion, desconectar y volver a colocar None
+
+    def close(self):
+        if self.connection:  # Si hay conexion, desconectar y volver a colocar None
             self.connection.close()
             print('Connection Finished')
             self.connection = None
         else:
             print('There is not connection')
 
-    def query_execution (self, consulta):
-        if (self.connection):
+    def query_execution(self, consulta):
+        if self.connection:
             cursor = self.connection.cursor()
             cursor.execute(consulta)
             # Obtiene todos los registros resultantes
