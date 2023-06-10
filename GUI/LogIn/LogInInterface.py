@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from GUI.LogIn import recursos_rc
 
 
 class Ui_LogIn(object):
@@ -53,4 +54,3 @@ class Ui_LogIn(object):
         LogIn.setWindowTitle(_translate("LogIn", "Log In Acuazul"))
         self.pushButtonAccept.setText(_translate("LogIn", "Iniciar sesión"))
         self.labelUser.setText(_translate("LogIn", "<html><head/><body><p><br/></p></body></html>"))
-import recursos_rc
