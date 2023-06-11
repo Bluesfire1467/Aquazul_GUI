@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>EspecieScreen</class>
- <widget class="QMainWindow" name="EspecieScreen">
+ <class>HabitatScreen</class>
+ <widget class="QMainWindow" name="HabitatScreen">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Especie</string>
+   <string>Habitat</string>
   </property>
   <property name="styleSheet">
    <string notr="true">border: 2px solid #3498db;
@@ -38,13 +38,13 @@ background-color: #eaf2ff;</string>
       <property name="minimumSize">
        <size>
         <width>550</width>
-        <height>180</height>
+        <height>251</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
         <width>551</width>
-        <height>180</height>
+        <height>251</height>
        </size>
       </property>
       <property name="font">
@@ -59,7 +59,7 @@ background-color: #eaf2ff;</string>
        <string notr="true">background-color:#eaf2ff;</string>
       </property>
       <property name="title">
-       <string>Especie</string>
+       <string>Habitat</string>
       </property>
       <widget class="QLabel" name="label">
        <property name="geometry">
@@ -80,10 +80,10 @@ font-weight: bold;
 text-align: center;</string>
        </property>
        <property name="text">
-        <string>Nombre:</string>
+        <string>Nombre habitat:</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="line_nombre">
+      <widget class="QLineEdit" name="line_nombrehabi">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -112,13 +112,13 @@ font-weight: bold;
 text-align: center;</string>
        </property>
        <property name="text">
-        <string>Nombre cientifico</string>
+        <string>Ancho</string>
        </property>
        <property name="textFormat">
         <enum>Qt::AutoText</enum>
        </property>
       </widget>
-      <widget class="QLineEdit" name="line_nombreCientifico">
+      <widget class="QLineEdit" name="line_ancho">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -147,10 +147,10 @@ font-weight: bold;
 text-align: center;</string>
        </property>
        <property name="text">
-        <string>Descripcion</string>
+        <string>Largo</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="line_descripcion">
+      <widget class="QLineEdit" name="line_largo">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -163,8 +163,8 @@ text-align: center;</string>
       <widget class="QPushButton" name="btn_agregar">
        <property name="geometry">
         <rect>
-         <x>310</x>
-         <y>50</y>
+         <x>300</x>
+         <y>150</y>
          <width>60</width>
          <height>60</height>
         </rect>
@@ -214,8 +214,8 @@ color: rgb(0, 0, 0);
       <widget class="QPushButton" name="btn_editar">
        <property name="geometry">
         <rect>
-         <x>380</x>
-         <y>50</y>
+         <x>370</x>
+         <y>150</y>
          <width>60</width>
          <height>60</height>
         </rect>
@@ -265,8 +265,8 @@ color: rgb(0, 0, 0);
       <widget class="QPushButton" name="btn_borrar">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>50</y>
+         <x>440</x>
+         <y>150</y>
          <width>60</width>
          <height>60</height>
         </rect>
@@ -313,6 +313,166 @@ color: rgb(0, 0, 0);
         </size>
        </property>
       </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>130</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #eaf2ff;
+border: 2px solid #3498db;
+border-radius: 8px;
+color: #333333;
+font-size: 10px;
+font-weight: bold;
+text-align: center;</string>
+       </property>
+       <property name="text">
+        <string>Descripcion</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="line_descripcion">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>130</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>160</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #eaf2ff;
+border: 2px solid #3498db;
+border-radius: 8px;
+color: #333333;
+font-size: 10px;
+font-weight: bold;
+text-align: center;</string>
+       </property>
+       <property name="text">
+        <string>Temperatura</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="line_temperatura">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>160</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>190</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #eaf2ff;
+border: 2px solid #3498db;
+border-radius: 8px;
+color: #333333;
+font-size: 10px;
+font-weight: bold;
+text-align: center;</string>
+       </property>
+       <property name="text">
+        <string>PH</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="line_ph">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>190</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>40</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #eaf2ff;
+border: 2px solid #3498db;
+border-radius: 8px;
+color: #333333;
+font-size: 11px;
+font-weight: bold;
+text-align: center;</string>
+       </property>
+       <property name="text">
+        <string>Tipo agua</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>70</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #eaf2ff;
+border: 2px solid #3498db;
+border-radius: 8px;
+color: #333333;
+font-size: 11px;
+font-weight: bold;
+text-align: center;</string>
+       </property>
+       <property name="text">
+        <string>Material</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="line_tipoagua">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>40</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="line_material">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>70</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
     </item>
     <item>
@@ -334,23 +494,11 @@ padding: 12px;
        <string>Mostrar</string>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
-       <property name="spacing">
-        <number>7</number>
-       </property>
-       <property name="leftMargin">
-        <number>9</number>
-       </property>
        <property name="topMargin">
         <number>20</number>
        </property>
-       <property name="rightMargin">
-        <number>9</number>
-       </property>
-       <property name="bottomMargin">
-        <number>9</number>
-       </property>
        <item>
-        <widget class="QTableWidget" name="table_especie"/>
+        <widget class="QTableWidget" name="table_habitat"/>
        </item>
       </layout>
      </widget>

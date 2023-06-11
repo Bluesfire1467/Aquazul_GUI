@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>AnimalScreen</class>
+ <widget class="QMainWindow" name="AnimalScreen">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -83,7 +83,7 @@ text-align: center;</string>
         <string>Nombre:</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="line_nombre">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -118,7 +118,7 @@ text-align: center;</string>
         <enum>Qt::AutoText</enum>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_2">
+      <widget class="QLineEdit" name="line_cantAli">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -150,7 +150,7 @@ text-align: center;</string>
         <string>Condicion:</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_3">
+      <widget class="QLineEdit" name="line_condicion">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -268,56 +268,6 @@ text-align: center;</string>
        </property>
        <property name="text">
         <string>Sucursal:</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>180</y>
-         <width>131</width>
-         <height>21</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox_2">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>150</y>
-         <width>131</width>
-         <height>21</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox_3">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>210</y>
-         <width>131</width>
-         <height>21</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox_4">
-       <property name="geometry">
-        <rect>
-         <x>390</x>
-         <y>40</y>
-         <width>131</width>
-         <height>21</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="comboBox_5">
-       <property name="geometry">
-        <rect>
-         <x>390</x>
-         <y>70</y>
-         <width>131</width>
-         <height>21</height>
-        </rect>
        </property>
       </widget>
       <widget class="QPushButton" name="btn_especie">
@@ -473,10 +423,60 @@ color: rgb(0, 0, 0);
         </size>
        </property>
       </widget>
+      <widget class="QLineEdit" name="line_especie">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>40</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="line_sucursal">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>70</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="line_alimentacion">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>150</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="line_peligro">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>180</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="line_habitat">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>210</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
     </item>
     <item>
-     <widget class="QGroupBox" name="groupBox_2">
+     <widget class="QGroupBox" name="asda">
       <property name="font">
        <font>
         <family>Arial Black</family>
@@ -492,11 +492,26 @@ padding: 12px;
 </string>
       </property>
       <property name="title">
-       <string>GroupBox</string>
+       <string>Mostrar</string>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>7</number>
+       </property>
+       <property name="leftMargin">
+        <number>20</number>
+       </property>
+       <property name="topMargin">
+        <number>20</number>
+       </property>
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>20</number>
+       </property>
        <item>
-        <widget class="QTableWidget" name="tableWidget"/>
+        <widget class="QTableWidget" name="table_animal"/>
        </item>
       </layout>
      </widget>
