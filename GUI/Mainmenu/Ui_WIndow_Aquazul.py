@@ -9,8 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-#from Images.MainWindow import recursos_rc
-
+import GUI.Mainmenu.MainMenurecursos
 
 class Ui_WIndow_Aquazul(object):
     def setupUi(self, WIndow_Aquazul):
@@ -108,7 +107,7 @@ class Ui_WIndow_Aquazul(object):
 "}")
         self.btn_habitat.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("Images/MainWindow/habitat.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/Images/MainWindow/habitat.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_habitat.setIcon(icon)
         self.btn_habitat.setIconSize(QtCore.QSize(300, 200))
         self.btn_habitat.setObjectName("btn_habitat")
@@ -130,7 +129,7 @@ class Ui_WIndow_Aquazul(object):
 "}")
         self.btn_animal.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("Images/MainWindow/animal.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(":/Images/MainWindow/animal.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_animal.setIcon(icon1)
         self.btn_animal.setIconSize(QtCore.QSize(300, 200))
         self.btn_animal.setObjectName("btn_animal")
@@ -152,7 +151,7 @@ class Ui_WIndow_Aquazul(object):
 "}")
         self.btn_especie.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("Images/MainWindow/especie.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap(":/Images/MainWindow/especie.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_especie.setIcon(icon2)
         self.btn_especie.setIconSize(QtCore.QSize(300, 200))
         self.btn_especie.setObjectName("btn_especie")
@@ -174,7 +173,7 @@ class Ui_WIndow_Aquazul(object):
 "}")
         self.btn_peligro.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("Images/MainWindow/peligro.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap(":/Images/MainWindow/peligro.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_peligro.setIcon(icon3)
         self.btn_peligro.setIconSize(QtCore.QSize(300, 200))
         self.btn_peligro.setObjectName("btn_peligro")
@@ -219,7 +218,7 @@ class Ui_WIndow_Aquazul(object):
 "}")
         self.btn_empleado.setText("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("Images/MainWindow/empleados.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap(":/Images/MainWindow/empleados.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_empleado.setIcon(icon4)
         self.btn_empleado.setIconSize(QtCore.QSize(150, 150))
         self.btn_empleado.setObjectName("btn_empleado")
@@ -240,7 +239,7 @@ class Ui_WIndow_Aquazul(object):
 "}")
         self.btn_correo.setText("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("Images/MainWindow/correo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap(":/Images/MainWindow/correo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_correo.setIcon(icon5)
         self.btn_correo.setIconSize(QtCore.QSize(150, 150))
         self.btn_correo.setObjectName("btn_correo")
@@ -282,7 +281,7 @@ class Ui_WIndow_Aquazul(object):
 "}")
         self.btn_material.setText("")
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("Images/MainWindow/material.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon7.addPixmap(QtGui.QPixmap(":/Images/MainWindow/material.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_material.setIcon(icon7)
         self.btn_material.setIconSize(QtCore.QSize(150, 200))
         self.btn_material.setObjectName("btn_material")
@@ -326,7 +325,7 @@ class Ui_WIndow_Aquazul(object):
 "}")
         self.btn_sucursal.setText("")
         icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("Images/MainWindow/sucursal.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon8.addPixmap(QtGui.QPixmap(":/Images/MainWindow/sucursal.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_sucursal.setIcon(icon8)
         self.btn_sucursal.setIconSize(QtCore.QSize(150, 150))
         self.btn_sucursal.setObjectName("btn_sucursal")
@@ -347,7 +346,7 @@ class Ui_WIndow_Aquazul(object):
 "}")
         self.btn_estado.setText("")
         icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap("Images/MainWindow/mexico.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon9.addPixmap(QtGui.QPixmap(":/Images/MainWindow/mexico.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_estado.setIcon(icon9)
         self.btn_estado.setIconSize(QtCore.QSize(150, 150))
         self.btn_estado.setObjectName("btn_estado")
@@ -368,7 +367,7 @@ class Ui_WIndow_Aquazul(object):
 "}")
         self.btn_direccion.setText("")
         icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap("Images/MainWindow/direccion.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon10.addPixmap(QtGui.QPixmap(":/Images/MainWindow/direccion.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_direccion.setIcon(icon10)
         self.btn_direccion.setIconSize(QtCore.QSize(150, 150))
         self.btn_direccion.setObjectName("btn_direccion")
@@ -389,7 +388,7 @@ class Ui_WIndow_Aquazul(object):
 "}")
         self.btn_tipoagua.setText("")
         icon11 = QtGui.QIcon()
-        icon11.addPixmap(QtGui.QPixmap("../../Images/MainWindow/tipo_agua.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon11.addPixmap(QtGui.QPixmap(":/Images/MainWindow/tipo_agua.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_tipoagua.setIcon(icon11)
         self.btn_tipoagua.setIconSize(QtCore.QSize(150, 150))
         self.btn_tipoagua.setObjectName("btn_tipoagua")
@@ -432,3 +431,4 @@ class Ui_WIndow_Aquazul(object):
         self.label_2.setText(_translate("WIndow_Aquazul", "Dirección"))
         self.label_3.setText(_translate("WIndow_Aquazul", "Tipo de agua"))
         self.label_4.setText(_translate("WIndow_Aquazul", "Sucursal"))
+

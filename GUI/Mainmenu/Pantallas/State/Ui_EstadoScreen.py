@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import GUI.Mainmenu.Pantallas.recursos_rc
 
 
 class Ui_EstadoScreen(object):
@@ -55,19 +56,19 @@ class Ui_EstadoScreen(object):
         self.btn_agregar.setMaximumSize(QtCore.QSize(60, 60))
         self.btn_agregar.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.btn_agregar.setStyleSheet("QPushButton{\n"
-"background-color: white;\n"
+"background-color: #eaf2ff;\n"
 "border: none;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"background-color: black;\n"
+"background-color: white;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-left-radius: 20px;\n"
 "color: rgb(0, 0, 0);\n"
 "}")
         self.btn_agregar.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../../Images/Botones Interfaz/agregar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/Images/Botones_Interfaz/agregar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_agregar.setIcon(icon)
         self.btn_agregar.setIconSize(QtCore.QSize(50, 50))
         self.btn_agregar.setObjectName("btn_agregar")
@@ -77,19 +78,19 @@ class Ui_EstadoScreen(object):
         self.btn_editar.setMaximumSize(QtCore.QSize(60, 60))
         self.btn_editar.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.btn_editar.setStyleSheet("QPushButton{\n"
-"background-color: white;\n"
+"background-color: #eaf2ff;\n"
 "border: none;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"background-color: black;\n"
+"background-color: white;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-left-radius: 20px;\n"
 "color: rgb(0, 0, 0);\n"
 "}")
         self.btn_editar.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../../../Images/Botones Interfaz/editar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap(":/Images/Botones_Interfaz/editar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_editar.setIcon(icon1)
         self.btn_editar.setIconSize(QtCore.QSize(50, 50))
         self.btn_editar.setObjectName("btn_editar")
@@ -99,19 +100,19 @@ class Ui_EstadoScreen(object):
         self.btn_borrar.setMaximumSize(QtCore.QSize(60, 60))
         self.btn_borrar.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.btn_borrar.setStyleSheet("QPushButton{\n"
-"background-color: white;\n"
+"background-color: #eaf2ff;\n"
 "border: none;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"background-color: black;\n"
+"background-color: white;\n"
 "border-top-left-radius: 20px;\n"
 "border-bottom-left-radius: 20px;\n"
 "color: rgb(0, 0, 0);\n"
 "}")
         self.btn_borrar.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("../../../Images/Botones Interfaz/borrar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap(":/Images/Botones_Interfaz/borrar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_borrar.setIcon(icon2)
         self.btn_borrar.setIconSize(QtCore.QSize(50, 50))
         self.btn_borrar.setObjectName("btn_borrar")
@@ -147,3 +148,4 @@ class Ui_EstadoScreen(object):
         self.groupBox.setTitle(_translate("EstadoScreen", "Estado"))
         self.label.setText(_translate("EstadoScreen", "Estado"))
         self.groupBox_2.setTitle(_translate("EstadoScreen", "Mostrar"))
+

@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import GUI.Mainmenu.Pantallas.recursos_rc
 
 class Ui_DireccionScreen(object):
     def setupUi(self, DireccionScreen):
@@ -116,72 +116,6 @@ class Ui_DireccionScreen(object):
 "font-weight: bold;\n"
 "text-align: center;")
         self.label_7.setObjectName("label_7")
-        self.btn_especie = QtWidgets.QPushButton(self.groupBox)
-        self.btn_especie.setGeometry(QtCore.QRect(320, 140, 60, 60))
-        self.btn_especie.setMinimumSize(QtCore.QSize(55, 55))
-        self.btn_especie.setMaximumSize(QtCore.QSize(60, 60))
-        self.btn_especie.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.btn_especie.setStyleSheet("QPushButton{\n"
-"background-color: white;\n"
-"border: none;\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"background-color: black;\n"
-"border-top-left-radius: 20px;\n"
-"border-bottom-left-radius: 20px;\n"
-"color: rgb(0, 0, 0);\n"
-"}")
-        self.btn_especie.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../../../Images/Botones Interfaz/agregar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btn_especie.setIcon(icon)
-        self.btn_especie.setIconSize(QtCore.QSize(50, 50))
-        self.btn_especie.setObjectName("btn_especie")
-        self.btn_especie_2 = QtWidgets.QPushButton(self.groupBox)
-        self.btn_especie_2.setGeometry(QtCore.QRect(390, 140, 60, 60))
-        self.btn_especie_2.setMinimumSize(QtCore.QSize(55, 55))
-        self.btn_especie_2.setMaximumSize(QtCore.QSize(60, 60))
-        self.btn_especie_2.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.btn_especie_2.setStyleSheet("QPushButton{\n"
-"background-color: white;\n"
-"border: none;\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"background-color: black;\n"
-"border-top-left-radius: 20px;\n"
-"border-bottom-left-radius: 20px;\n"
-"color: rgb(0, 0, 0);\n"
-"}")
-        self.btn_especie_2.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../../../Images/Botones Interfaz/editar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btn_especie_2.setIcon(icon1)
-        self.btn_especie_2.setIconSize(QtCore.QSize(50, 50))
-        self.btn_especie_2.setObjectName("btn_especie_2")
-        self.btn_especie_3 = QtWidgets.QPushButton(self.groupBox)
-        self.btn_especie_3.setGeometry(QtCore.QRect(460, 140, 60, 60))
-        self.btn_especie_3.setMinimumSize(QtCore.QSize(55, 55))
-        self.btn_especie_3.setMaximumSize(QtCore.QSize(60, 60))
-        self.btn_especie_3.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.btn_especie_3.setStyleSheet("QPushButton{\n"
-"background-color: white;\n"
-"border: none;\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"background-color: black;\n"
-"border-top-left-radius: 20px;\n"
-"border-bottom-left-radius: 20px;\n"
-"color: rgb(0, 0, 0);\n"
-"}")
-        self.btn_especie_3.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("../../../Images/Botones Interfaz/borrar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btn_especie_3.setIcon(icon2)
-        self.btn_especie_3.setIconSize(QtCore.QSize(50, 50))
-        self.btn_especie_3.setObjectName("btn_especie_3")
         self.line_estado = QtWidgets.QLineEdit(self.groupBox)
         self.line_estado.setGeometry(QtCore.QRect(390, 40, 121, 20))
         self.line_estado.setObjectName("line_estado")
@@ -194,6 +128,72 @@ class Ui_DireccionScreen(object):
         self.line_numext = QtWidgets.QLineEdit(self.groupBox)
         self.line_numext.setGeometry(QtCore.QRect(150, 190, 121, 20))
         self.line_numext.setObjectName("line_numext")
+        self.btn_borrar = QtWidgets.QPushButton(self.groupBox)
+        self.btn_borrar.setGeometry(QtCore.QRect(460, 120, 60, 60))
+        self.btn_borrar.setMinimumSize(QtCore.QSize(55, 55))
+        self.btn_borrar.setMaximumSize(QtCore.QSize(60, 60))
+        self.btn_borrar.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.btn_borrar.setStyleSheet("QPushButton{\n"
+"background-color: #eaf2ff;\n"
+"border: none;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: white;\n"
+"border-top-left-radius: 20px;\n"
+"border-bottom-left-radius: 20px;\n"
+"color: rgb(0, 0, 0);\n"
+"}")
+        self.btn_borrar.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/Images/Botones_Interfaz/borrar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btn_borrar.setIcon(icon)
+        self.btn_borrar.setIconSize(QtCore.QSize(50, 50))
+        self.btn_borrar.setObjectName("btn_borrar")
+        self.btn_editar = QtWidgets.QPushButton(self.groupBox)
+        self.btn_editar.setGeometry(QtCore.QRect(390, 120, 60, 60))
+        self.btn_editar.setMinimumSize(QtCore.QSize(55, 55))
+        self.btn_editar.setMaximumSize(QtCore.QSize(60, 60))
+        self.btn_editar.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.btn_editar.setStyleSheet("QPushButton{\n"
+"background-color: #eaf2ff;\n"
+"border: none;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: white;\n"
+"border-top-left-radius: 20px;\n"
+"border-bottom-left-radius: 20px;\n"
+"color: rgb(0, 0, 0);\n"
+"}")
+        self.btn_editar.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/Images/Botones_Interfaz/editar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btn_editar.setIcon(icon1)
+        self.btn_editar.setIconSize(QtCore.QSize(50, 50))
+        self.btn_editar.setObjectName("btn_editar")
+        self.btn_agregar = QtWidgets.QPushButton(self.groupBox)
+        self.btn_agregar.setGeometry(QtCore.QRect(320, 120, 60, 60))
+        self.btn_agregar.setMinimumSize(QtCore.QSize(55, 55))
+        self.btn_agregar.setMaximumSize(QtCore.QSize(60, 60))
+        self.btn_agregar.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.btn_agregar.setStyleSheet("QPushButton{\n"
+"background-color: #eaf2ff;\n"
+"border: none;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"background-color: white;\n"
+"border-top-left-radius: 20px;\n"
+"border-bottom-left-radius: 20px;\n"
+"color: rgb(0, 0, 0);\n"
+"}")
+        self.btn_agregar.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/Images/Botones_Interfaz/agregar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btn_agregar.setIcon(icon2)
+        self.btn_agregar.setIconSize(QtCore.QSize(50, 50))
+        self.btn_agregar.setObjectName("btn_agregar")
         self.verticalLayout.addWidget(self.groupBox)
         self.asda = QtWidgets.QGroupBox(self.centralwidget)
         font = QtGui.QFont()
@@ -234,3 +234,4 @@ class Ui_DireccionScreen(object):
         self.label_6.setText(_translate("DireccionScreen", "Numero Ext"))
         self.label_7.setText(_translate("DireccionScreen", "Estado"))
         self.asda.setTitle(_translate("DireccionScreen", "Mostrar"))
+
