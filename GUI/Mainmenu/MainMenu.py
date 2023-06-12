@@ -1,11 +1,10 @@
-from GUI.Mainmenu.MainMenuInterface import Ui_WIndow_Aquazul
+from GUI.Mainmenu.Ui_WIndow_Aquazul import Ui_WIndow_Aquazul
 from Oracle import Connection_Oracle as conn
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
-from GUI.LogIn.LogIn import LogIn
-from GUI.LogIn.LogInInterface import Ui_LogIn
+from PyQt5.QtWidgets import QMainWindow
 
 
 class MainMenu(QMainWindow):
