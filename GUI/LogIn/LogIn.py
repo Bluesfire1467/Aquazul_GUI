@@ -1,10 +1,12 @@
 from Oracle.Connection_Oracle import Connection_Oracle
-from PyQt5.QtWidgets import QMainWindow
 from GUI.LogIn.LogInInterface import Ui_LogIn
 from GUI.PopUpWindow.PopUpWindow import ok_information_window
+from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtCore import QObject, pyqtSignal
 
 
-class LogIn(QMainWindow):
+class LogIn(QMainWindow, QObject):
+    login_successful = pyqtSignal()
 
     def __init__(self):
         super().__init__()
@@ -25,7 +27,8 @@ class LogIn(QMainWindow):
         self.connection = Connection_Oracle()
 
         if self.connection.open(user, password):
-            print('Exito')  # mandar a llamar a la siguiente ventana
+            self.login_successful.emit()
+            self.close()
         else:
             # Ventana emergente de información
             msg = 'El usuario o la contraseña son incorrectos, vuelva a intentarlo'
