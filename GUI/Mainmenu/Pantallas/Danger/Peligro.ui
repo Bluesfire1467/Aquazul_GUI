@@ -96,8 +96,8 @@ text-align: center;</string>
       <widget class="QPushButton" name="btn_agregar">
        <property name="geometry">
         <rect>
-         <x>310</x>
-         <y>10</y>
+         <x>330</x>
+         <y>20</y>
          <width>60</width>
          <height>60</height>
         </rect>
@@ -119,12 +119,12 @@ text-align: center;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
-background-color: white;
+background-color: #eaf2ff;
 border: none;
 }
 
 QPushButton:hover{
-background-color: black;
+background-color: white;
 border-top-left-radius: 20px;
 border-bottom-left-radius: 20px;
 color: rgb(0, 0, 0);
@@ -134,8 +134,8 @@ color: rgb(0, 0, 0);
         <string/>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../../../Images/Botones Interfaz/agregar.png</normaloff>../../../Images/Botones Interfaz/agregar.png</iconset>
+        <iconset resource="../../../../Images/Botones_Interfaz/Botones.qrc">
+         <normaloff>:/Images/Botones_Interfaz/agregar.png</normaloff>:/Images/Botones_Interfaz/agregar.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -147,8 +147,8 @@ color: rgb(0, 0, 0);
       <widget class="QPushButton" name="btn_editar">
        <property name="geometry">
         <rect>
-         <x>380</x>
-         <y>10</y>
+         <x>400</x>
+         <y>20</y>
          <width>60</width>
          <height>60</height>
         </rect>
@@ -170,12 +170,12 @@ color: rgb(0, 0, 0);
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
-background-color: white;
+background-color: #eaf2ff;
 border: none;
 }
 
 QPushButton:hover{
-background-color: black;
+background-color: white;
 border-top-left-radius: 20px;
 border-bottom-left-radius: 20px;
 color: rgb(0, 0, 0);
@@ -185,8 +185,8 @@ color: rgb(0, 0, 0);
         <string/>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../../../Images/Botones Interfaz/editar.png</normaloff>../../../Images/Botones Interfaz/editar.png</iconset>
+        <iconset resource="../../../../Images/Botones_Interfaz/Botones.qrc">
+         <normaloff>:/Images/Botones_Interfaz/editar.png</normaloff>:/Images/Botones_Interfaz/editar.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -198,8 +198,8 @@ color: rgb(0, 0, 0);
       <widget class="QPushButton" name="btn_borrar">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>10</y>
+         <x>470</x>
+         <y>20</y>
          <width>60</width>
          <height>60</height>
         </rect>
@@ -221,12 +221,12 @@ color: rgb(0, 0, 0);
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
-background-color: white;
+background-color: #eaf2ff;
 border: none;
 }
 
 QPushButton:hover{
-background-color: black;
+background-color: white;
 border-top-left-radius: 20px;
 border-bottom-left-radius: 20px;
 color: rgb(0, 0, 0);
@@ -236,8 +236,8 @@ color: rgb(0, 0, 0);
         <string/>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>../../../Images/Botones Interfaz/borrar.png</normaloff>../../../Images/Botones Interfaz/borrar.png</iconset>
+        <iconset resource="../../../../Images/Botones_Interfaz/Botones.qrc">
+         <normaloff>:/Images/Botones_Interfaz/borrar.png</normaloff>:/Images/Botones_Interfaz/borrar.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -279,6 +279,8 @@ padding: 12px;
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../../Images/Botones_Interfaz/Botones.qrc"/>
+ </resources>
  <connections/>
 </ui>
