@@ -12,12 +12,11 @@ def main():
     app = QApplication(sys.argv)
 
     # Crear la primera interfaz
-    #log_in = LogIn()
+    log_in = LogIn()
     main_menu = MainMenu()
-    #log_in.login_successful.connect(main_menu.show())
-    #log_in.show()
-    #conn = log_in.get_connection()
-    main_menu.show()
+    log_in.login_successful.connect(main_menu.show)
+    log_in.show()
+    conn = log_in.get_connection()
 
     sys.exit(app.exec_())
 
