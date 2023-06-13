@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="Images/MainWindow">
+    <file>alimento.png</file>
+    <file>animal.png</file>
+    <file>correo.png</file>
+    <file>direccion.png</file>
+    <file>empleados.png</file>
+    <file>especie.png</file>
+    <file>habitat.png</file>
+    <file>material.png</file>
+    <file>mexico.png</file>
+    <file>peligro.png</file>
+    <file>sucursal.png</file>
+    <file>tipo_agua.png</file>
+  </qresource>
+</RCC>

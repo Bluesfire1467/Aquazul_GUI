@@ -41,6 +41,7 @@ class Connection_Oracle:
         if self._connection:
             cursor = self._connection.cursor()
             cursor.execute(consulta)
+
             # Obtiene todos los registros resultantes
             result = cursor.fetchall()
             self._connection.commit()
@@ -49,3 +50,25 @@ class Connection_Oracle:
             return result
         else:
             print('There is not connection')
+
+    def query_insert(self, consulta):
+        if self._connection:
+
+            try:
+                cursor = self._connection.cursor()
+                cursor.execute(consulta)
+                self._connection.commit()
+                print("Hecho!")
+
+            except cx_Oracle.DatabaseError as e:
+                error, = e.args
+                print("Error durante la ejecución de la consulta:", error.message)
+
+            finally:
+                cursor.close()
+        else:
+            print('There is not connection')
+
+
+
+

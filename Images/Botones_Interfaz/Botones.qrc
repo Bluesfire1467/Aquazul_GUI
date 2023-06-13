@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="Images/Botones_Interfaz">
+        <file>agregar.png</file>
+        <file>borrar.png</file>
+        <file>editar.png</file>
+    </qresource>
+</RCC>
