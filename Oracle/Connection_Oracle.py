@@ -42,7 +42,7 @@ class Connection_Oracle:
             cursor = self._connection.cursor()
             cursor.execute(consulta)
             # Obtiene todos los registros resultantes
-            result = cursor.fechall()
+            result = cursor.fetchall()
             self._connection.commit()
             cursor.close()
 
