@@ -2,6 +2,7 @@ from GUI.Mainmenu.Pantallas.State.Ui_EstadoScreen import Ui_EstadoScreen
 from PyQt5.QtWidgets import QMainWindow, QApplication, QTableWidget, QTableWidgetItem
 from PyQt5.QtCore import pyqtSignal
 import sys
+from PyQt5.QtCore import pyqtSignal
 from Oracle import Connection_Oracle as conn
 from GUI.PopUpWindow.PopUpWindow import ok_information_window
 
@@ -107,3 +108,7 @@ class State(QMainWindow):
                 print(States[i][j])
         self.ui.table_estado.show()
         coneccionTemp.close()
+
+    def closeEvent(self, event):
+        self.closed.emit()
+        event.accept()
