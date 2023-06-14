@@ -55,6 +55,7 @@ class Connection_Oracle:
         if self._connection:
 
             try:
+                print("Llegue!!")
                 cursor = self._connection.cursor()
                 cursor.execute(consulta)
                 self._connection.commit()
