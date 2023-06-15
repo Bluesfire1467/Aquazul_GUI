@@ -1,4 +1,5 @@
 from Oracle.Connection_Oracle import Connection_Oracle
+from GUI.Mainmenu.MainMenu import MainMenu
 from GUI.LogIn.LogInInterface import Ui_LogIn
 from GUI.PopUpWindow.PopUpWindow import ok_information_window
 from PyQt5.QtWidgets import QMainWindow
@@ -20,6 +21,9 @@ class LogIn(QMainWindow, QObject):
         self.ui.lineEditUser.returnPressed.connect(self.enter_jump_key_press_event)
         # Conectar el evento de la tecla enter a enterKeyPressEvent
         self.ui.lineEditPassword.returnPressed.connect(self.enter_key_press_event)
+        self.main_menu = MainMenu()
+        self.login_successful.connect(self.main_menu.show)
+        self.show()
 
     def button_clicked(self):
         user = self.ui.lineEditUser.text()
@@ -29,6 +33,7 @@ class LogIn(QMainWindow, QObject):
         if self.connection.open(user, password):
             self.login_successful.emit()
             self.close()
+            self.main_menu.set_connection(self.connection)
         else:
             # Ventana emergente de información
             msg = 'El usuario o la contraseña son incorrectos, vuelva a intentarlo'
