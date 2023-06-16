@@ -137,3 +137,4 @@ class MainMenu(QMainWindow):
 
     def set_connection(self, conn):
         self.conn = conn
+        self.ui.name_user.setText(self.conn.user.upper())

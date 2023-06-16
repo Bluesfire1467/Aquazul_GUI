@@ -29,6 +29,19 @@ class Connection_Oracle:
             print('Database connection error', error)
             return False
 
+    def q_open(self):
+        try:
+            self._connection = cx_Oracle.connect(
+                user=self.user,
+                password=self.password,
+                dsn=self._dsn,
+                encoding=self._encoding)
+
+            print('Successful Connection')
+        except Exception as ex:
+            error = ex
+            print('Database connection error', error)
+
     def close(self):
         if self._connection:  # Si hay conexion, desconectar y volver a colocar None
             self._connection.close()

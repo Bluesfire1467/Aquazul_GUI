@@ -33,7 +33,7 @@ class TypeofWater(QMainWindow):
         # self.ui.table_tipoagua.cellClicked(self.edit_table)
 
     def agregarTypeWater(self):
-        self.conn.open("developer", "PassDev")
+        self.conn.q_open()
 
         regist = str(self.ui.line_tipoagua.text())
         consulta = f"""insert into tipo_agua (tipo_agua.id_tipo_de_agua, tipo_agua.tipo_de_agua) values ((select max(tipo_agua.id_tipo_de_agua)from tipo_agua)+1,'{regist}')"""
@@ -41,7 +41,7 @@ class TypeofWater(QMainWindow):
         self.conn.close()
 
     def eliminarTypeWater(self):
-        self.conn.open("developer", "PassDev")
+        self.conn.q_open()
 
         regist = str(self.ui.line_tipoagua.text())
 
@@ -60,7 +60,7 @@ class TypeofWater(QMainWindow):
         self.conn.close()
 
     def refreshtable(self):
-        self.conn.open("developer", "PassDev")
+        self.conn.q_open()
 
         consulta = str("SELECT * FROM TIPO_AGUA")
 
@@ -71,7 +71,7 @@ class TypeofWater(QMainWindow):
 
         self.ui.table_tipoagua.setRowCount(f)
         self.ui.table_tipoagua.setColumnCount(c)
-        self.ui.table_tipoagua.setHorizontalHeaderLabels(['ID', 'Tipo de agua'])
+        self.ui.table_tipoagua.setHorizontalHeaderLabels(['No.', 'Tipo de agua'])
         self.ui.table_tipoagua.verticalHeader().setVisible(False)
 
         for i in range(f):
@@ -89,7 +89,7 @@ class TypeofWater(QMainWindow):
 
         try:
             # obtener tabla original
-            self.conn.open("developer", "PassDev")
+            self.conn.q_open()
             consulta = str("SELECT * FROM TIPO_AGUA")
             typeWatertext = self.conn.query_execution(consulta)
 

@@ -21,7 +21,7 @@ class State(QMainWindow):
         super().showEvent(event)
         # Mostrar tabla Tipo de agua en la tabla
         # self.ui.btn_borrar.clicked.connect(self.show_table)
-        self.conn.open("developer", "PassDev")
+        self.conn.q_open()
 
         consulta = str("SELECT * FROM estado")
 
@@ -43,7 +43,7 @@ class State(QMainWindow):
         self.conn.close()
 
     def agregarEstado(self):
-        self.conn.open("developer", "PassDev")
+        self.conn.q_open()
 
         regist = str(self.ui.line_estado.text())
 
@@ -60,7 +60,7 @@ class State(QMainWindow):
         self.conn.close()
 
     def eliminarEstado(self):
-        self.conn.open("developer", "PassDev")
+        self.conn.q_open()
 
         regist = str(self.ui.line_estado.text())
 
@@ -79,7 +79,7 @@ class State(QMainWindow):
         self.conn.close()
 
     def refreshTable(self):
-        self.conn.open("developer", "PassDev")
+        self.conn.q_open()
 
         consulta = str("SELECT * FROM estado")
 

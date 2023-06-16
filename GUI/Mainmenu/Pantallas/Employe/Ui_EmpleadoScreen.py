@@ -119,7 +119,7 @@ class Ui_EmpleadoScreen(object):
 "font-weight: bold;\n"
 "text-align: center;")
         self.label_9.setObjectName("label_9")
-        self.line_sucursal = QtWidgets.QLineEdit(self.groupBox)
+        self.line_sucursal = QtWidgets.QComboBox(self.groupBox)
         self.line_sucursal.setGeometry(QtCore.QRect(390, 40, 121, 20))
         self.line_sucursal.setObjectName("line_sucursal")
         self.line_direccion = QtWidgets.QLineEdit(self.groupBox)

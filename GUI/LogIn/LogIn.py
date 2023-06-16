@@ -31,9 +31,10 @@ class LogIn(QMainWindow, QObject):
         self.connection = Connection_Oracle()
 
         if self.connection.open(user, password):
+            print(self.connection.user)
+            self.main_menu.set_connection(self.connection)
             self.login_successful.emit()
             self.close()
-            self.main_menu.set_connection(self.connection)
         else:
             # Ventana emergente de información
             msg = 'El usuario o la contraseña son incorrectos, vuelva a intentarlo'
