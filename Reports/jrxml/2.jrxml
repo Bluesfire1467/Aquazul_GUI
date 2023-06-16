@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1132dcd4-82b9-476c-83e3-9dcdda413ea9">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Acuario"/>
+	<parameter name="Estado_extincion" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT NOMBRE_CIENTIFICO
+FROM ANIMAL
+JOIN PELIGRO USING(ID_PELIGRO)
+JOIN ESPECIE USING(ID_ESPECIE)
+WHERE PELIGRO LIKE  $P{Estado_extincion} 
+GROUP BY NOMBRE_CIENTIFICO]]>
+	</queryString>
+	<field name="NOMBRE_CIENTIFICO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NOMBRE_CIENTIFICO"/>
+		<property name="com.jaspersoft.studio.field.label" value="NOMBRE_CIENTIFICO"/>
+	</field>
+	<variable name="NOMBRE_CIENTIFICO1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{NOMBRE_CIENTIFICO}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="80" y="0" width="400" height="79" backcolor="#859998" uuid="1b30c031-ce52-4a6b-9eb4-e656ffc13017"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado de extinsion de especie]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="0" width="200" height="20" uuid="c812db25-398d-4730-9ef8-1be1ad419180">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2cce25a8-61bc-4893-ad2a-8f0353a5f7da"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Double"/>
+					<leftPen lineWidth="1.0" lineStyle="Double"/>
+					<bottomPen lineWidth="1.0" lineStyle="Double"/>
+					<rightPen lineWidth="1.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Especie]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="180" y="0" width="200" height="20" uuid="a14b1ff2-b1d4-4099-bc63-1207dfa89f9c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2cce25a8-61bc-4893-ad2a-8f0353a5f7da"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Double"/>
+					<leftPen lineWidth="1.0" lineStyle="Double"/>
+					<bottomPen lineWidth="1.0" lineStyle="Double"/>
+					<rightPen lineWidth="1.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{NOMBRE_CIENTIFICO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="58" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

@@ -4,3 +4,4 @@ __pycache__/
 .idea/
 Images/MainWindow/recursos.qrc
 requirements.txt
+*.csv
