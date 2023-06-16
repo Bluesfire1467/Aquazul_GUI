@@ -13,34 +13,34 @@ class State(QMainWindow):
         self.ui.setupUi(self)
         self.conn = conn
 
-    def closeEvent(self, event):
-        self.closed.emit()
-        event.accept()
+        # Agregar estado
+        self.ui.btn_agregar.clicked.connect(self.agregarEstado)
+
+        # Eliminar estado
+        self.ui.btn_borrar.clicked.connect(self.eliminarEstado)
+
+        # Editar
+        self.ui.table_estado.cellChanged.connect(self.editTable)
+
+        # Evento click en la tabla
+        self.ui.table_estado.cellClicked.connect(self.cell_to_line)
 
     def showEvent(self, event):
         super().showEvent(event)
         # Mostrar tabla Tipo de agua en la tabla
         # self.ui.btn_borrar.clicked.connect(self.show_table)
-        self.conn.q_open()
+        self.refreshTable()
 
-        consulta = str("SELECT * FROM estado")
+    def cell_to_line(self, row, column):
+        item = self.ui.table_estado.item(row, column)
+        if item is None:
+            return
 
-        States = self.conn.query_execution(consulta)
+        if column == 0:
+            return
 
-        f = len(States)  # No. filas
-        c = len(States[0])  # No. columnas
-
-        print(States)
-
-        self.ui.table_estado.setRowCount(f)
-        self.ui.table_estado.setColumnCount(c)
-        self.ui.table_estado.setHorizontalHeaderLabels(['No.', 'Estado'])
-        self.ui.table_estado.verticalHeader().setVisible(False)
-
-        self.print_table(f, c, States)
-
-        self.ui.table_estado.show()
-        self.conn.close()
+        NewRegist = str(item.text())
+        self.ui.line_estado.setText(NewRegist)
 
     def agregarEstado(self):
         self.conn.q_open()
@@ -54,10 +54,9 @@ class State(QMainWindow):
         consulta = str(
             f"""insert into estado (id_estado, nombre_estado) values ((select max(estado.id_estado)from estado)+1,'{regist}')""")
 
-        print(consulta)
-        print(type(consulta))
         self.conn.query_insert(consulta)
         self.conn.close()
+        self.refreshTable()
 
     def eliminarEstado(self):
         self.conn.q_open()
@@ -69,14 +68,15 @@ class State(QMainWindow):
             return
 
         buscar = str(f"""select id_estado from estado where nombre_estado = '{regist}'""")
-        print(buscar)
         IDreg = (self.conn.query_execution(buscar))
         ID = IDreg[0][0]
-        print(ID)
+
         consulta = str(f"""delete from estado where id_estado = {ID}""")
-        print(consulta)
+
         self.conn.query_insert(consulta)
         self.conn.close()
+        self.ui.line_estado.setText("")
+        self.refreshTable()
 
     def refreshTable(self):
         self.conn.q_open()
@@ -88,8 +88,6 @@ class State(QMainWindow):
         f = len(States)  # No. filas
         c = len(States[0])  # No. columnas
 
-        print(States)
-
         self.ui.table_estado.setRowCount(f)
         self.ui.table_estado.setColumnCount(c)
         self.ui.table_estado.setHorizontalHeaderLabels(['ID', 'Estado'])
@@ -98,6 +96,34 @@ class State(QMainWindow):
         self.print_table(f, c, States)
         self.ui.table_estado.show()
         self.conn.close()
+
+    def editTable(self, row, column):
+        self.conn.q_open()
+
+        consulta = "SELECT * FROM estado"
+        State = self.conn.query_execution(consulta)
+
+        # Extrae nuevo dato
+        item = self.ui.table_estado.item(row, column)
+        if item is None:
+            return
+
+        NewRegist = str(item.text())
+        OldRegist = str(State[row][column])
+
+        # Sale cuando no hay cambios
+        if NewRegist == OldRegist:
+            print("No hay cambios relizados!")
+            return
+
+        # Limpia LineBox
+        self.ui.line_estado.setText("")
+
+        update = "UPDATE estado SET nombre_estado = :NewRegist WHERE nombre_estado = :registOld"
+        self.conn.query_update(update,(NewRegist, OldRegist))
+
+        self.conn.close()
+        self.refreshTable()
 
     def closeEvent(self, event):
         self.closed.emit()

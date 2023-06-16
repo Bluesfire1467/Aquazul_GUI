@@ -11,13 +11,12 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import GUI.Mainmenu.Pantallas.recursos_rc
 
-
 class Ui_EstadoScreen(object):
     def setupUi(self, EstadoScreen):
         EstadoScreen.setObjectName("EstadoScreen")
-        EstadoScreen.resize(568, 400)
-        EstadoScreen.setMinimumSize(QtCore.QSize(568, 400))
-        EstadoScreen.setMaximumSize(QtCore.QSize(568, 400))
+        EstadoScreen.resize(600, 450)
+        EstadoScreen.setMinimumSize(QtCore.QSize(600, 450))
+        EstadoScreen.setMaximumSize(QtCore.QSize(600, 450))
         EstadoScreen.setStyleSheet("border: 2px solid #3498db;\n"
 "border-radius: 10px;\n"
 "\n"
@@ -27,7 +26,7 @@ class Ui_EstadoScreen(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox.setMinimumSize(QtCore.QSize(550, 100))
+        self.groupBox.setMinimumSize(QtCore.QSize(580, 100))
         self.groupBox.setMaximumSize(QtCore.QSize(551, 100))
         font = QtGui.QFont()
         font.setFamily("Arial Black")
@@ -51,7 +50,7 @@ class Ui_EstadoScreen(object):
         self.line_estado.setGeometry(QtCore.QRect(150, 40, 121, 20))
         self.line_estado.setObjectName("line_estado")
         self.btn_agregar = QtWidgets.QPushButton(self.groupBox)
-        self.btn_agregar.setGeometry(QtCore.QRect(310, 10, 60, 60))
+        self.btn_agregar.setGeometry(QtCore.QRect(430, 20, 60, 60))
         self.btn_agregar.setMinimumSize(QtCore.QSize(55, 55))
         self.btn_agregar.setMaximumSize(QtCore.QSize(60, 60))
         self.btn_agregar.setLayoutDirection(QtCore.Qt.RightToLeft)
@@ -72,30 +71,8 @@ class Ui_EstadoScreen(object):
         self.btn_agregar.setIcon(icon)
         self.btn_agregar.setIconSize(QtCore.QSize(50, 50))
         self.btn_agregar.setObjectName("btn_agregar")
-        self.btn_editar = QtWidgets.QPushButton(self.groupBox)
-        self.btn_editar.setGeometry(QtCore.QRect(380, 10, 60, 60))
-        self.btn_editar.setMinimumSize(QtCore.QSize(55, 55))
-        self.btn_editar.setMaximumSize(QtCore.QSize(60, 60))
-        self.btn_editar.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.btn_editar.setStyleSheet("QPushButton{\n"
-"background-color: #eaf2ff;\n"
-"border: none;\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"background-color: white;\n"
-"border-top-left-radius: 20px;\n"
-"border-bottom-left-radius: 20px;\n"
-"color: rgb(0, 0, 0);\n"
-"}")
-        self.btn_editar.setText("")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/Images/Botones_Interfaz/editar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btn_editar.setIcon(icon1)
-        self.btn_editar.setIconSize(QtCore.QSize(50, 50))
-        self.btn_editar.setObjectName("btn_editar")
         self.btn_borrar = QtWidgets.QPushButton(self.groupBox)
-        self.btn_borrar.setGeometry(QtCore.QRect(450, 10, 60, 60))
+        self.btn_borrar.setGeometry(QtCore.QRect(500, 20, 60, 60))
         self.btn_borrar.setMinimumSize(QtCore.QSize(55, 55))
         self.btn_borrar.setMaximumSize(QtCore.QSize(60, 60))
         self.btn_borrar.setLayoutDirection(QtCore.Qt.RightToLeft)
@@ -111,32 +88,19 @@ class Ui_EstadoScreen(object):
 "color: rgb(0, 0, 0);\n"
 "}")
         self.btn_borrar.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/Images/Botones_Interfaz/borrar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btn_borrar.setIcon(icon2)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/Images/Botones_Interfaz/borrar.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btn_borrar.setIcon(icon1)
         self.btn_borrar.setIconSize(QtCore.QSize(50, 50))
         self.btn_borrar.setObjectName("btn_borrar")
         self.verticalLayout.addWidget(self.groupBox)
-        self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
-        font = QtGui.QFont()
-        font.setFamily("Arial Black")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.groupBox_2.setFont(font)
-        self.groupBox_2.setStyleSheet("background-color: #eaf2ff;\n"
-"padding: 12px;\n"
-"")
-        self.groupBox_2.setObjectName("groupBox_2")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.groupBox_2)
-        self.horizontalLayout.setContentsMargins(-1, 20, -1, -1)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.table_estado = QtWidgets.QTableWidget(self.groupBox_2)
+        self.table_estado = QtWidgets.QTableWidget(self.centralwidget)
+        self.table_estado.setMinimumSize(QtCore.QSize(580, 0))
+        self.table_estado.setMaximumSize(QtCore.QSize(580, 16777215))
         self.table_estado.setObjectName("table_estado")
         self.table_estado.setColumnCount(0)
         self.table_estado.setRowCount(0)
-        self.horizontalLayout.addWidget(self.table_estado)
-        self.verticalLayout.addWidget(self.groupBox_2)
+        self.verticalLayout.addWidget(self.table_estado)
         EstadoScreen.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(EstadoScreen)
@@ -147,5 +111,4 @@ class Ui_EstadoScreen(object):
         EstadoScreen.setWindowTitle(_translate("EstadoScreen", "Estado"))
         self.groupBox.setTitle(_translate("EstadoScreen", "Estado"))
         self.label.setText(_translate("EstadoScreen", "Estado"))
-        self.groupBox_2.setTitle(_translate("EstadoScreen", "Mostrar"))
 

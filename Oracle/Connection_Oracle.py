@@ -83,6 +83,26 @@ class Connection_Oracle:
         else:
             print('There is not connection')
 
+    def query_update(self, consulta, Lista):
+        if self._connection:
+
+            try:
+                print("Llegue!!")
+                cursor = self._connection.cursor()
+                cursor.execute(consulta, Lista)
+                self._connection.commit()
+                print("Hecho!")
+
+            except cx_Oracle.DatabaseError as e:
+                error, = e.args
+                print("Error durante la ejecución de la consulta:", error.message)
+
+            finally:
+                cursor.close()
+
+        else:
+            print('There is not connection')
+
 
 
 
