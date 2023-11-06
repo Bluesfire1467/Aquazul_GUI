@@ -14,9 +14,9 @@ import GUI.Mainmenu.MainMenurecursos
 class Ui_WIndow_Aquazul(object):
     def setupUi(self, WIndow_Aquazul):
         WIndow_Aquazul.setObjectName("WIndow_Aquazul")
-        WIndow_Aquazul.resize(1060, 820)
+        WIndow_Aquazul.resize(1060, 902)
         WIndow_Aquazul.setMinimumSize(QtCore.QSize(1060, 820))
-        WIndow_Aquazul.setMaximumSize(QtCore.QSize(1060, 828))
+        WIndow_Aquazul.setMaximumSize(QtCore.QSize(1060, 1000))
         WIndow_Aquazul.setStyleSheet("border: 2px solid #3498db;\n"
 "border-radius: 10px;\n"
 "padding: 20px;\n"
@@ -409,6 +409,9 @@ class Ui_WIndow_Aquazul(object):
         self.label_4.setObjectName("label_4")
         self.verticalLayout_2.addWidget(self.frame_5)
         self.verticalLayout.addWidget(self.frame_3)
+        self.btn_Reporte = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_Reporte.setObjectName("btn_Reporte")
+        self.verticalLayout.addWidget(self.btn_Reporte)
         WIndow_Aquazul.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(WIndow_Aquazul)
@@ -431,4 +434,4 @@ class Ui_WIndow_Aquazul(object):
         self.label_2.setText(_translate("WIndow_Aquazul", "Dirección"))
         self.label_3.setText(_translate("WIndow_Aquazul", "Tipo de agua"))
         self.label_4.setText(_translate("WIndow_Aquazul", "Sucursal"))
-
+        self.btn_Reporte.setText(_translate("WIndow_Aquazul", "Generar Reporte"))

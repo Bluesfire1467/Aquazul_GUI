@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1060</width>
-    <height>820</height>
+    <height>902</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -19,7 +19,7 @@
   <property name="maximumSize">
    <size>
     <width>1060</width>
-    <height>828</height>
+    <height>1000</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -244,7 +244,7 @@ color: rgb(0, 0, 0);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Images/MainWindow/MainMenu.qrc">
+           <iconset>
             <normaloff>:/Images/MainWindow/habitat.png</normaloff>:/Images/MainWindow/habitat.png</iconset>
           </property>
           <property name="iconSize">
@@ -295,7 +295,7 @@ color: rgb(0, 0, 0);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Images/MainWindow/MainMenu.qrc">
+           <iconset>
             <normaloff>:/Images/MainWindow/animal.png</normaloff>:/Images/MainWindow/animal.png</iconset>
           </property>
           <property name="iconSize">
@@ -346,7 +346,7 @@ color: rgb(0, 0, 0);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Images/MainWindow/MainMenu.qrc">
+           <iconset>
             <normaloff>:/Images/MainWindow/especie.png</normaloff>:/Images/MainWindow/especie.png</iconset>
           </property>
           <property name="iconSize">
@@ -397,7 +397,7 @@ color: rgb(0, 0, 0);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Images/MainWindow/MainMenu.qrc">
+           <iconset>
             <normaloff>:/Images/MainWindow/peligro.png</normaloff>:/Images/MainWindow/peligro.png</iconset>
           </property>
           <property name="iconSize">
@@ -534,7 +534,7 @@ color: rgb(0, 0, 0);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Images/MainWindow/MainMenu.qrc">
+           <iconset>
             <normaloff>:/Images/MainWindow/empleados.png</normaloff>:/Images/MainWindow/empleados.png</iconset>
           </property>
           <property name="iconSize">
@@ -582,7 +582,7 @@ color: rgb(0, 0, 0);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Images/MainWindow/MainMenu.qrc">
+           <iconset>
             <normaloff>:/Images/MainWindow/correo.png</normaloff>:/Images/MainWindow/correo.png</iconset>
           </property>
           <property name="iconSize">
@@ -630,7 +630,7 @@ color: rgb(0, 0, 0);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Images/MainWindow/MainMenu.qrc">
+           <iconset>
             <normaloff>:/Images/MainWindow/alimento.png</normaloff>:/Images/MainWindow/alimento.png</iconset>
           </property>
           <property name="iconSize">
@@ -678,7 +678,7 @@ color: rgb(0, 0, 0);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Images/MainWindow/MainMenu.qrc">
+           <iconset>
             <normaloff>:/Images/MainWindow/material.png</normaloff>:/Images/MainWindow/material.png</iconset>
           </property>
           <property name="iconSize">
@@ -812,7 +812,7 @@ color: rgb(0, 0, 0);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Images/MainWindow/MainMenu.qrc">
+           <iconset>
             <normaloff>:/Images/MainWindow/sucursal.png</normaloff>:/Images/MainWindow/sucursal.png</iconset>
           </property>
           <property name="iconSize">
@@ -860,7 +860,7 @@ color: rgb(0, 0, 0);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Images/MainWindow/MainMenu.qrc">
+           <iconset>
             <normaloff>:/Images/MainWindow/mexico.png</normaloff>:/Images/MainWindow/mexico.png</iconset>
           </property>
           <property name="iconSize">
@@ -908,7 +908,7 @@ color: rgb(0, 0, 0);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Images/MainWindow/MainMenu.qrc">
+           <iconset>
             <normaloff>:/Images/MainWindow/direccion.png</normaloff>:/Images/MainWindow/direccion.png</iconset>
           </property>
           <property name="iconSize">
@@ -956,7 +956,7 @@ color: rgb(0, 0, 0);
            <string/>
           </property>
           <property name="icon">
-           <iconset resource="../../Images/MainWindow/MainMenu.qrc">
+           <iconset>
             <normaloff>:/Images/MainWindow/tipo_agua.png</normaloff>:/Images/MainWindow/tipo_agua.png</iconset>
           </property>
           <property name="iconSize">
@@ -1030,6 +1030,13 @@ color: rgb(0, 0, 0);
         </widget>
        </item>
       </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btn_Reporte">
+      <property name="text">
+       <string>Generar Reporte</string>
+      </property>
      </widget>
     </item>
    </layout>

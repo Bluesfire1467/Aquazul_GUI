@@ -104,5 +104,3 @@ class Connection_Oracle:
             print('There is not connection')
 
 
-
-

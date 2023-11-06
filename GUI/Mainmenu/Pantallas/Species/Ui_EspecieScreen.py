@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import GUI.Mainmenu.Pantallas.recursos_rc
 
+
 class Ui_EspecieScreen(object):
     def setupUi(self, EspecieScreen):
         EspecieScreen.setObjectName("EspecieScreen")
@@ -143,27 +144,11 @@ class Ui_EspecieScreen(object):
         self.btn_borrar.setIconSize(QtCore.QSize(50, 50))
         self.btn_borrar.setObjectName("btn_borrar")
         self.verticalLayout.addWidget(self.groupBox)
-        self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
-        font = QtGui.QFont()
-        font.setFamily("Arial Black")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.groupBox_2.setFont(font)
-        self.groupBox_2.setStyleSheet("background-color: #eaf2ff;\n"
-"padding: 12px;\n"
-"")
-        self.groupBox_2.setObjectName("groupBox_2")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.groupBox_2)
-        self.horizontalLayout.setContentsMargins(9, 20, 9, 9)
-        self.horizontalLayout.setSpacing(7)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.table_especie = QtWidgets.QTableWidget(self.groupBox_2)
+        self.table_especie = QtWidgets.QTableWidget(self.centralwidget)
         self.table_especie.setObjectName("table_especie")
         self.table_especie.setColumnCount(0)
         self.table_especie.setRowCount(0)
-        self.horizontalLayout.addWidget(self.table_especie)
-        self.verticalLayout.addWidget(self.groupBox_2)
+        self.verticalLayout.addWidget(self.table_especie)
         EspecieScreen.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(EspecieScreen)
@@ -176,5 +161,3 @@ class Ui_EspecieScreen(object):
         self.label.setText(_translate("EspecieScreen", "Nombre:"))
         self.label_2.setText(_translate("EspecieScreen", "Nombre cientifico"))
         self.label_3.setText(_translate("EspecieScreen", "Descripcion"))
-        self.groupBox_2.setTitle(_translate("EspecieScreen", "Mostrar"))
-

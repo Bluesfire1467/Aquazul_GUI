@@ -77,7 +77,7 @@ class Ui_HabitatScreen(object):
         self.line_largo.setGeometry(QtCore.QRect(150, 100, 121, 20))
         self.line_largo.setObjectName("line_largo")
         self.label_4 = QtWidgets.QLabel(self.groupBox)
-        self.label_4.setGeometry(QtCore.QRect(10, 130, 131, 21))
+        self.label_4.setGeometry(QtCore.QRect(10, 160, 131, 21))
         self.label_4.setStyleSheet("background-color: #eaf2ff;\n"
 "border: 2px solid #3498db;\n"
 "border-radius: 8px;\n"
@@ -87,10 +87,10 @@ class Ui_HabitatScreen(object):
 "text-align: center;")
         self.label_4.setObjectName("label_4")
         self.line_descripcion = QtWidgets.QLineEdit(self.groupBox)
-        self.line_descripcion.setGeometry(QtCore.QRect(150, 130, 121, 20))
+        self.line_descripcion.setGeometry(QtCore.QRect(150, 160, 121, 20))
         self.line_descripcion.setObjectName("line_descripcion")
         self.label_5 = QtWidgets.QLabel(self.groupBox)
-        self.label_5.setGeometry(QtCore.QRect(10, 160, 131, 21))
+        self.label_5.setGeometry(QtCore.QRect(10, 190, 131, 21))
         self.label_5.setStyleSheet("background-color: #eaf2ff;\n"
 "border: 2px solid #3498db;\n"
 "border-radius: 8px;\n"
@@ -100,10 +100,10 @@ class Ui_HabitatScreen(object):
 "text-align: center;")
         self.label_5.setObjectName("label_5")
         self.line_temperatura = QtWidgets.QLineEdit(self.groupBox)
-        self.line_temperatura.setGeometry(QtCore.QRect(150, 160, 121, 20))
+        self.line_temperatura.setGeometry(QtCore.QRect(150, 190, 121, 20))
         self.line_temperatura.setObjectName("line_temperatura")
         self.label_6 = QtWidgets.QLabel(self.groupBox)
-        self.label_6.setGeometry(QtCore.QRect(10, 190, 131, 21))
+        self.label_6.setGeometry(QtCore.QRect(10, 220, 131, 21))
         self.label_6.setStyleSheet("background-color: #eaf2ff;\n"
 "border: 2px solid #3498db;\n"
 "border-radius: 8px;\n"
@@ -113,7 +113,7 @@ class Ui_HabitatScreen(object):
 "text-align: center;")
         self.label_6.setObjectName("label_6")
         self.line_ph = QtWidgets.QLineEdit(self.groupBox)
-        self.line_ph.setGeometry(QtCore.QRect(150, 190, 121, 20))
+        self.line_ph.setGeometry(QtCore.QRect(150, 220, 121, 20))
         self.line_ph.setObjectName("line_ph")
         self.label_7 = QtWidgets.QLabel(self.groupBox)
         self.label_7.setGeometry(QtCore.QRect(290, 40, 81, 21))
@@ -135,12 +135,6 @@ class Ui_HabitatScreen(object):
 "font-weight: bold;\n"
 "text-align: center;")
         self.label_8.setObjectName("label_8")
-        self.line_tipoagua = QtWidgets.QLineEdit(self.groupBox)
-        self.line_tipoagua.setGeometry(QtCore.QRect(380, 40, 121, 20))
-        self.line_tipoagua.setObjectName("line_tipoagua")
-        self.line_material = QtWidgets.QLineEdit(self.groupBox)
-        self.line_material.setGeometry(QtCore.QRect(380, 70, 121, 20))
-        self.line_material.setObjectName("line_material")
         self.btn_editar = QtWidgets.QPushButton(self.groupBox)
         self.btn_editar.setGeometry(QtCore.QRect(380, 150, 60, 60))
         self.btn_editar.setMinimumSize(QtCore.QSize(55, 55))
@@ -207,27 +201,31 @@ class Ui_HabitatScreen(object):
         self.btn_borrar.setIcon(icon2)
         self.btn_borrar.setIconSize(QtCore.QSize(50, 50))
         self.btn_borrar.setObjectName("btn_borrar")
+        self.comboBox_TipoAgua = QtWidgets.QComboBox(self.groupBox)
+        self.comboBox_TipoAgua.setGeometry(QtCore.QRect(380, 40, 141, 22))
+        self.comboBox_TipoAgua.setObjectName("comboBox_TipoAgua")
+        self.comboBox_Material = QtWidgets.QComboBox(self.groupBox)
+        self.comboBox_Material.setGeometry(QtCore.QRect(380, 70, 141, 22))
+        self.comboBox_Material.setObjectName("comboBox_Material")
+        self.label_9 = QtWidgets.QLabel(self.groupBox)
+        self.label_9.setGeometry(QtCore.QRect(10, 130, 131, 21))
+        self.label_9.setStyleSheet("background-color: #eaf2ff;\n"
+"border: 2px solid #3498db;\n"
+"border-radius: 8px;\n"
+"color: #333333;\n"
+"font-size: 10px;\n"
+"font-weight: bold;\n"
+"text-align: center;")
+        self.label_9.setObjectName("label_9")
+        self.line_alto = QtWidgets.QLineEdit(self.groupBox)
+        self.line_alto.setGeometry(QtCore.QRect(150, 130, 121, 20))
+        self.line_alto.setObjectName("line_alto")
         self.verticalLayout.addWidget(self.groupBox)
-        self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
-        font = QtGui.QFont()
-        font.setFamily("Arial Black")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.groupBox_2.setFont(font)
-        self.groupBox_2.setStyleSheet("background-color: #eaf2ff;\n"
-"padding: 12px;\n"
-"")
-        self.groupBox_2.setObjectName("groupBox_2")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self.groupBox_2)
-        self.horizontalLayout.setContentsMargins(-1, 20, -1, -1)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.table_habitat = QtWidgets.QTableWidget(self.groupBox_2)
+        self.table_habitat = QtWidgets.QTableWidget(self.centralwidget)
         self.table_habitat.setObjectName("table_habitat")
         self.table_habitat.setColumnCount(0)
         self.table_habitat.setRowCount(0)
-        self.horizontalLayout.addWidget(self.table_habitat)
-        self.verticalLayout.addWidget(self.groupBox_2)
+        self.verticalLayout.addWidget(self.table_habitat)
         HabitatScreen.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(HabitatScreen)
@@ -245,5 +243,4 @@ class Ui_HabitatScreen(object):
         self.label_6.setText(_translate("HabitatScreen", "PH"))
         self.label_7.setText(_translate("HabitatScreen", "Tipo agua"))
         self.label_8.setText(_translate("HabitatScreen", "Material"))
-        self.groupBox_2.setTitle(_translate("HabitatScreen", "Mostrar"))
-
+        self.label_9.setText(_translate("HabitatScreen", "Alto"))

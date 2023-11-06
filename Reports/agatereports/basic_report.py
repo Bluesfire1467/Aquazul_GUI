@@ -1,4 +1,4 @@
-from agatereports.engine import reportGenerator
+from Reports.agatereports.engine import reportGenerator
 
 
 class BasicReport:

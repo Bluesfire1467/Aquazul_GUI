@@ -1,6 +1,10 @@
 from GUI.Mainmenu.Pantallas.Employe.Ui_EmpleadoScreen import Ui_EmpleadoScreen
-from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem
+from PyQt5.QtWidgets import QTableWidgetItem
 from PyQt5.QtCore import pyqtSignal
+from Oracle.Connection_Oracle import Connection_Oracle
+from PyQt5.QtWidgets import *
+from GUI.PopUpWindow.PopUpWindow import ok_information_window
+import sys
 
 
 class Employe(QMainWindow):
@@ -10,9 +14,10 @@ class Employe(QMainWindow):
         super().__init__()
         self.ui = Ui_EmpleadoScreen()
         self.ui.setupUi(self)
+        self.id_inter = None
         self.conn = conn
 
-        self.ui.table_empleado.cellClicked.connect(self.get_row)
+        #self.ui.table_empleado.cellClicked.connect(self.get_row)
 
     def closeEvent(self, event):
         self.closed.emit()
@@ -21,7 +26,7 @@ class Employe(QMainWindow):
     def showEvent(self, event):
         super().showEvent(event)
         self.refreshtable()
-        self.set_sucursal()
+        #self.set_sucursal()
 
     def set_sucursal(self):
         query = str('''SELECT NOMBRE_SUCURSAL FROM SUCURSAL''')
@@ -83,12 +88,53 @@ class Employe(QMainWindow):
                 self.ui.table_empleado.setItem(i, j, QTableWidgetItem(str(self.db_data[i][j])))
                 print(self.db_data[i][j])
 
-    def get_row(self, row, col):
-        print(self.db_data[row])
-        #self.ui.line_nombre.setText(self.db_data[row][0])
-        #self.ui.line_apellidopaterno.setText(self.db_data[row][1])
-        #self.ui.line_apellidomaterno.setText(self.db_data[row][2])
-        #self.ui.line_descripcion.setText(self.db_data[row][3])
-        #self.ui.line_sucursal.setEditText(self.db_data[row][4])
-        #self.ui.line_direccion.setText(self.db_data[row][5])
-        #self.ui.line_correo.setText(self.db_data[row][6])
+    def cell_to_line(self, row, column):
+        self.conn.q_open()
+
+        print(row, column)
+        listcell = []
+        for i in range(8):
+            listcell.append(self.ui.table_animal.item(row,i).text())
+
+        self.id_inter = listcell
+        self.ui.line_nombre.setText(listcell[1])
+        self.ui.line_apellidopaterno.setText(listcell[2])
+        self.ui.line_apellidomaterno.setText(listcell[3])
+        self.ui.line_descripcion.setText(listcell[4])
+
+        ID_ALIMENTACION = int(listcell[4])
+        ID_PELIGRO = int(listcell[5])
+        ID_HABITAT = int(listcell[6])
+        ID_ESPECIE = int(listcell[7])
+        ID_SUCURSAL = int(listcell[8])
+
+
+        #extrayendo compos para que coincidan
+        buscar = str(f"""SELECT alimentacion FROM alimentacion WHERE id_alimentacion = '{ID_ALIMENTACION}'""")
+        ID_ALIMENTACION = (self.conn.query_execution(buscar))
+        ID_ALIMENTACION = ID_ALIMENTACION[0][0]
+
+        buscar = str(f"""SELECT peligro FROM peligro WHERE id_peligro = '{ID_PELIGRO}'""")
+        ID_PELIGRO = (self.conn.query_execution(buscar))
+        ID_PELIGRO = ID_PELIGRO[0][0]
+
+        buscar = str(f"""SELECT nombre_habitat FROM habitat WHERE id_habitat = '{ID_HABITAT}'""")
+        ID_HABITAT = (self.conn.query_execution(buscar))
+        ID_HABITAT = ID_HABITAT[0][0]
+
+        buscar = str(f"""SELECT nombre_comun FROM especie WHERE id_especie = '{ID_ESPECIE}'""")
+        ID_ESPECIE = (self.conn.query_execution(buscar))
+        ID_ESPECIE = ID_ESPECIE[0][0]
+
+        buscar = str(f"""SELECT nombre_sucursal FROM sucursal WHERE id_sucursal = '{ID_SUCURSAL}'""")
+        ID_SUCURSAL = (self.conn.query_execution(buscar))
+        ID_SUCURSAL = ID_SUCURSAL[0][0]
+
+        self.ui.comboBox_tipoalimentacion.setCurrentText(ID_ALIMENTACION)
+        self.ui.comboBox_peligro.setCurrentText(ID_PELIGRO)
+        self.ui.comboBox_habitat.setCurrentText(ID_HABITAT)
+        self.ui.comboBox_especie.setCurrentText(ID_ESPECIE)
+        self.ui.comboBox_sucursal.setCurrentText(ID_SUCURSAL)
+
+        self.conn.close()
+

@@ -201,7 +201,7 @@ color: rgb(0, 0, 0);
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../../../Images/Botones_Interfaz/Botones.qrc">
+        <iconset>
          <normaloff>:/Images/Botones_Interfaz/agregar.png</normaloff>:/Images/Botones_Interfaz/agregar.png</iconset>
        </property>
        <property name="iconSize">
@@ -252,7 +252,7 @@ color: rgb(0, 0, 0);
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../../../Images/Botones_Interfaz/Botones.qrc">
+        <iconset>
          <normaloff>:/Images/Botones_Interfaz/editar.png</normaloff>:/Images/Botones_Interfaz/editar.png</iconset>
        </property>
        <property name="iconSize">
@@ -303,7 +303,7 @@ color: rgb(0, 0, 0);
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../../../Images/Botones_Interfaz/Botones.qrc">
+        <iconset>
          <normaloff>:/Images/Botones_Interfaz/borrar.png</normaloff>:/Images/Botones_Interfaz/borrar.png</iconset>
        </property>
        <property name="iconSize">
@@ -316,44 +316,7 @@ color: rgb(0, 0, 0);
      </widget>
     </item>
     <item>
-     <widget class="QGroupBox" name="groupBox_2">
-      <property name="font">
-       <font>
-        <family>Arial Black</family>
-        <pointsize>12</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #eaf2ff;
-padding: 12px;
-</string>
-      </property>
-      <property name="title">
-       <string>Mostrar</string>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <property name="spacing">
-        <number>7</number>
-       </property>
-       <property name="leftMargin">
-        <number>9</number>
-       </property>
-       <property name="topMargin">
-        <number>20</number>
-       </property>
-       <property name="rightMargin">
-        <number>9</number>
-       </property>
-       <property name="bottomMargin">
-        <number>9</number>
-       </property>
-       <item>
-        <widget class="QTableWidget" name="table_especie"/>
-       </item>
-      </layout>
-     </widget>
+     <widget class="QTableWidget" name="table_especie"/>
     </item>
    </layout>
   </widget>

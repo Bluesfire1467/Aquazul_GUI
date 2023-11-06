@@ -11,6 +11,7 @@ class State(QMainWindow):
         super().__init__()
         self.ui = Ui_EstadoScreen()
         self.ui.setupUi(self)
+        self.ui.id_inter = None
         self.conn = conn
 
         # Agregar estado
@@ -20,7 +21,7 @@ class State(QMainWindow):
         self.ui.btn_borrar.clicked.connect(self.eliminarEstado)
 
         # Editar
-        self.ui.table_estado.cellChanged.connect(self.editTable)
+        self.ui.btn_editar.clicked.connect(self.editTable)
 
         # Evento click en la tabla
         self.ui.table_estado.cellClicked.connect(self.cell_to_line)
@@ -33,11 +34,12 @@ class State(QMainWindow):
 
     def cell_to_line(self, row, column):
         item = self.ui.table_estado.item(row, column)
-        if item is None:
-            return
+        listcell = []
+        for i in range(2):
+            listcell.append(self.ui.table_estado.item(row, i).text())
 
-        if column == 0:
-            return
+        print(listcell)
+        self.id_inter = listcell
 
         NewRegist = str(item.text())
         self.ui.line_estado.setText(NewRegist)
@@ -97,30 +99,17 @@ class State(QMainWindow):
         self.ui.table_estado.show()
         self.conn.close()
 
-    def editTable(self, row, column):
+    def editTable(self):
         self.conn.q_open()
 
-        consulta = "SELECT * FROM estado"
-        State = self.conn.query_execution(consulta)
+        Estado = str(self.ui.line_estado.text())
+        print("Estado: ",Estado)
 
-        # Extrae nuevo dato
-        item = self.ui.table_estado.item(row, column)
-        if item is None:
-            return
-
-        NewRegist = str(item.text())
-        OldRegist = str(State[row][column])
-
-        # Sale cuando no hay cambios
-        if NewRegist == OldRegist:
-            print("No hay cambios relizados!")
-            return
+        consulta = "UPDATE estado SET nombre_estado = :Estado WHERE id_estado = :id"
+        self.conn.query_update(consulta, (Estado,int(self.id_inter[0])))
 
         # Limpia LineBox
         self.ui.line_estado.setText("")
-
-        update = "UPDATE estado SET nombre_estado = :NewRegist WHERE nombre_estado = :registOld"
-        self.conn.query_update(update,(NewRegist, OldRegist))
 
         self.conn.close()
         self.refreshTable()
@@ -133,4 +122,4 @@ class State(QMainWindow):
         for i in range(f):
             for j in range(c):
                 self.ui.table_estado.setItem(i, j, QTableWidgetItem(str(States[i][j])))
-                print(States[i][j])
+                #print(States[i][j])

@@ -1,2 +1,2 @@
-from agatereports.basic_report import BasicReport
+from Reports.agatereports.basic_report import BasicReport
 

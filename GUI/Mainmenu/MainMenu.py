@@ -11,6 +11,7 @@ from GUI.Mainmenu.Pantallas.AquariumBranch.AquariumBranch import AquariumBranch
 from GUI.Mainmenu.Pantallas.State.State import State
 from GUI.Mainmenu.Pantallas.Address.Address import Address
 from GUI.Mainmenu.Pantallas.TypeWater.TypeWater import TypeofWater
+
 from PyQt5.QtWidgets import QMainWindow
 
 
@@ -47,6 +48,21 @@ class MainMenu(QMainWindow):
         self.ui.btn_estado.clicked.connect(self.btn_state_clicked)
         self.ui.btn_direccion.clicked.connect(self.btn_address_clicked)
         self.ui.btn_tipoagua.clicked.connect(self.btn_type_water_clicked)
+        #self.ui.btn_Reporte.clicked.connect(self.btn_reportes)
+
+        self.ui.btn_correo.setEnabled(False)
+        self.ui.btn_material.setEnabled(False)
+        self.ui.btn_tipoagua.setEnabled(False)
+        self.ui.btn_sucursal.setEnabled(False)
+        self.ui.btn_peligro.setEnabled(False)
+        self.ui.btn_alimentacion.setEnabled(False)
+        self.ui.btn_direccion.setEnabled(False)
+
+    def btn_reportes(self):
+        reporte_habitad("Reptiles")
+        reporte_peligro_extincion("Bajo riesgo")
+        reporte_cantidad_animales()
+
 
     def btn_animal_clicked(self):
         self.setDisabled(True)
